@@ -1,0 +1,18 @@
+server:
+  prot: 8080
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+      naming: org.hibernate.cfg.DefaultNamingStrategy
+    database: mysql
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/hey
+    username: root
+    password: root
+  mvc:
+      view:
+        prefix: /WEB-INF/jsp/
+        suffix: .jsp
