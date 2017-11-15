@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping("sysPermission")
 public class SysPermissionController {
     @Autowired
-    private SysPermissionService menuService;
+    private SysPermissionService sysPermissionService;
     @Autowired
     private SysRoleService sysRoleService;
 
@@ -28,7 +28,7 @@ public class SysPermissionController {
      */
     @RequestMapping("/list")
     public String list(SysPermission sysPermission,Model model){
-        List<SysPermission> permissionsList=menuService.findAll(sysPermission);
+        List<SysPermission> permissionsList=sysPermissionService.findAll(sysPermission);
         model.addAttribute("menuList",permissionsList);
         model.addAttribute("queryObj",sysPermission);
         return "system/sysPermission/list";
@@ -40,12 +40,12 @@ public class SysPermissionController {
      */
     @RequestMapping("/detail")
     public String detail(Long id,Model model){
-        List<SysPermission> permissionsList=menuService.findAll(new SysPermission());
+        List<SysPermission> permissionsList=sysPermissionService.findAll(new SysPermission());
         model.addAttribute("menuList",permissionsList);
         List<SysRole> roleList=sysRoleService.findAll(new SysRole());
         model.addAttribute("roleList",roleList);
         if(id!=null){
-            SysPermission sysPermission=menuService.findOne(id);
+            SysPermission sysPermission=sysPermissionService.findOne(id);
             model.addAttribute("sysPermission",sysPermission);
         }
         return "system/sysPermission/detail";
@@ -57,7 +57,7 @@ public class SysPermissionController {
      */
     @RequestMapping("/add")
     public String add(SysPermission sysPermission){
-        sysPermission=menuService.save(sysPermission);
+        sysPermission=sysPermissionService.save(sysPermission);
         return "forward:/sysPermission/list";
     }
     /**
@@ -66,7 +66,7 @@ public class SysPermissionController {
      */
     @RequestMapping("/delete")
     public String delete(Long id){
-        menuService.delete(id);
+        sysPermissionService.delete(id);
         return "forward:/sysPermission/list";
     }
 }

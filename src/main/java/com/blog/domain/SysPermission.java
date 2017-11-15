@@ -1,16 +1,8 @@
 package com.blog.domain;
 
 import java.io.Serializable;
-import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 
 /**
  * 权限实体类;
@@ -29,6 +21,9 @@ public class SysPermission extends DataEntity implements Serializable{
     private Long parentId; // 父编号
     private String parentIds; // 父编号列表
     private Boolean available = Boolean.FALSE;
+
+    @Transient
+    private String isCheck;
 
 
 
@@ -88,7 +83,15 @@ public class SysPermission extends DataEntity implements Serializable{
         this.available = available;
     }
 
-//  public List<SysRole> getRoles() {
+    public String getIsCheck() {
+        return isCheck;
+    }
+
+    public void setIsCheck(String isCheck) {
+        this.isCheck = isCheck;
+    }
+
+    //  public List<SysRole> getRoles() {
 //      return roles;
 //  }
 //

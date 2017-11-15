@@ -6,8 +6,6 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -34,7 +32,7 @@ public class UserInfo extends DataEntity implements Serializable {
     private String password; // 密码;
     private String salt;// 加密密码的盐
 
-    private byte state;// 用户状态,0:创建未认证（比如没有激活，没有输入验证码等等）--等待验证的用户 ,
+    private int state;// 用户状态,0:创建未认证（比如没有激活，没有输入验证码等等）--等待验证的用户 ,
     // 1:正常状态,2：用户被锁定.
 
     @ManyToMany(fetch = FetchType.EAGER) // 立即从数据库中进行加载数据
@@ -75,11 +73,11 @@ public class UserInfo extends DataEntity implements Serializable {
         this.salt = salt;
     }
 
-    public byte getState() {
+    public int getState() {
         return state;
     }
 
-    public void setState(byte state) {
+    public void setState(int state) {
         this.state = state;
     }
 

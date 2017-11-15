@@ -26,7 +26,7 @@ public class SysPermissionService extends BaseService {
             StringBuffer sql=new StringBuffer("select s.* from sys_permission s");
             sql.append(" where 1=1 ");
             if(sysPermission.getCreateDate()!=null){
-            sql.append(" and s.createDate =  '%%%s%%'");
+            sql.append(" and s.create_date =  '%%%s%%'");
             param.add(sysPermission.getCreateDate());
             }
 
@@ -36,12 +36,12 @@ public class SysPermissionService extends BaseService {
             }
 
             if(sysPermission.getParentId()!=null){
-            sql.append(" and s.parentId like  '%%%s%%'");
+            sql.append(" and s.parent_id like  '%%%s%%'");
             param.add(sysPermission.getParentId());
             }
 
             if(StringUtils.isNotBlank(sysPermission.getParentIds())){
-            sql.append(" and s.parentIds like  '%%%s%%'");
+            sql.append(" and s.parent_ids like  '%%%s%%'");
             param.add(sysPermission.getParentIds());
             }
 
@@ -51,7 +51,7 @@ public class SysPermissionService extends BaseService {
             }
 
             if(StringUtils.isNotBlank(sysPermission.getResourceType())){
-            sql.append(" and s.resourceType like  '%%%s%%'");
+            sql.append(" and s.resource_type like  '%%%s%%'");
             param.add(sysPermission.getResourceType());
             }
 

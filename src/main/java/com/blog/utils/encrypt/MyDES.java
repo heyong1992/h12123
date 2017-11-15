@@ -1,4 +1,4 @@
-package com.blog.utils;
+package com.blog.utils.encrypt;
 import java.security.SecureRandom;
 
 import javax.crypto.Cipher;

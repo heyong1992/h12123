@@ -1,4 +1,4 @@
-package com.blog.utils;
+package com.blog.utils.encrypt;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -52,11 +52,16 @@ public class ToolPbkdf {
     }
 
     public static void main(String[] args) {
-        System.out.println( createCredential("123456"));
+        String s = createCredential("1234567");//String变量
+        byte b[] = s.getBytes();//String转换为byte[]
+
+        String t = new String(b);//bytep[]转换为String
+        System.out.println( t);
 
     }
 
     public static String createCredential(String password){
+
         return digest(password,createSalt()).toString();
     }
 }

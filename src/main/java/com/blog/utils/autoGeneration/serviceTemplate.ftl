@@ -15,12 +15,6 @@ public class ${className?cap_first}Service extends BaseService{
 	@Autowired
 	private ${className?cap_first}Repository ${className}Repository;
 
-	public static <T> List<T> copyIterator(Iterable<T> iter) {
-    	List<T> copy = new ArrayList<T>();
-        while (iter.iterator().hasNext())
-        copy.add(iter.iterator().next());
-        return copy;
-    }
     public List<${className?cap_first}> findAll(${className?cap_first} ${className}){
             List<Object> param=new ArrayList<>();
             StringBuffer sql=new StringBuffer("select s.* from ${tableName} s");
@@ -28,17 +22,17 @@ public class ${className?cap_first}Service extends BaseService{
     <#list columnList as pl>
         <#if pl.column_type == "Timestamp">
             if(${className}.get${pl.column_name?cap_first}()!=null){
-            sql.append(" and s.${pl.column_name} =  '%%%s%%'");
+            sql.append(" and s.${pl.column_name_table} =  '%%%s%%'");
             param.add(${className}.get${pl.column_name?cap_first}());
             }
         <#elseif pl.column_type == "int">
             if(${className}.get${pl.column_name?cap_first}()!=null){
-            sql.append(" and s.${pl.column_name} =  '%%%s%%'");
+            sql.append(" and s.${pl.column_name_table} =  '%%%s%%'");
             param.add(${className}.get${pl.column_name?cap_first}());
             }
         <#else>
             if(StringUtils.isNotBlank(${className}.get${pl.column_name?cap_first}())){
-            sql.append(" and s.${pl.column_name} like  '%%%s%%'");
+            sql.append(" and s.${pl.column_name_table} like  '%%%s%%'");
             param.add(${className}.get${pl.column_name?cap_first}());
             }
         </#if>

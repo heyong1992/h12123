@@ -21,6 +21,7 @@ public class SelectTagHandler extends SimpleTagSupport implements DynamicAttribu
     private List optionsList;
     private String name;
     private String size;
+    private String isHead;
     private Map<String, Object> tagAttrs = new HashedMap();
 
     public void setName(String name) {
@@ -35,6 +36,10 @@ public class SelectTagHandler extends SimpleTagSupport implements DynamicAttribu
         this.optionsList = optionsList;
     }
 
+    public void setHead(String head) {
+        this.isHead = head;
+    }
+
     @Override
     public void doTag() throws JspException, IOException {
         PageContext pageContext = (PageContext) getJspContext();
@@ -47,7 +52,9 @@ public class SelectTagHandler extends SimpleTagSupport implements DynamicAttribu
             out.print(attrDefinition);
         }
         out.print(">");
-
+        if(tagAttrs.get("isHead")!=null&&"true".equalsIgnoreCase(tagAttrs.get("isHead").toString())){
+            out.print("<option value=''>--请选择--</option>");
+        }
         for (Object option : this.optionsList) {
             Map<String, Object> map=ObjectUtils.objectToMap(option);
             String optionTag = String.format(OPTION_TEMPLATE,map.get("id"),map.get("name"));

@@ -1,11 +1,13 @@
 package com.blog.config.shiro;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
@@ -73,7 +75,10 @@ public class MyShiroRealm extends AuthorizingRealm {
             System.out.println(role.getPermissions());
             for(SysPermission p:role.getPermissions()){
                 System.out.println(p);
-                authorizationInfo.addStringPermission(p.getPermission());
+                if(StringUtils.isNotBlank(p.getPermission())){
+                    authorizationInfo.addStringPermission(p.getPermission());
+                }
+
             }
         }
         return authorizationInfo;

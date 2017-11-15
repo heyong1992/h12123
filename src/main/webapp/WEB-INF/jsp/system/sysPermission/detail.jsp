@@ -26,7 +26,15 @@
                     <label class="col-sm-2 control-label">上级菜单</label>
 
                     <div class="col-sm-10">
-                        <formTags:select name="parentId" size="1" optionsList="${menuList}" class="form-control m-b"/>
+                        <formTags:select isHead="true" name="parentId" size="1" optionsList="${menuList}" class="form-control m-b"/>
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">权限url</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="permission" value="${sysPermission.permission}">
                     </div>
                 </div>
                 <div class="hr-line-dashed"></div>

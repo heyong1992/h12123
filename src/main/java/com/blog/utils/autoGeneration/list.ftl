@@ -50,7 +50,7 @@ request.setAttribute("contextPath", contextPath);
             <tbody>
             <c:forEach items="${r"$"}{list}" var="p">
                 <tr>
-                    <td><input type="checkbox"></td>
+                    <td><input value="${r"$"}{p.id}" type="checkbox"></td>
                     <td>${r"$"}{p.id}</td>
                     <#list columnList as pl>
                      <td>${r"$"}{p.${pl.column_name}}</td>

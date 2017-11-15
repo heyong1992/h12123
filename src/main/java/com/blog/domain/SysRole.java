@@ -3,13 +3,7 @@ package com.blog.domain;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 
 /**
  * 系统角色实体类;
@@ -24,7 +18,8 @@ public class SysRole extends DataEntity implements Serializable {
 	private String role; // 角色标识程序中判断使用,如"admin",这个是唯一的:
 	private String description; // 角色描述,UI界面显示使用
 	private Boolean available = Boolean.FALSE; // 是否可用,如果不可用将不会添加给用户
-
+	@Transient
+	private String isCheck;
 	// 角色 -- 权限关系：多对多关系;
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "SysRolePermission", joinColumns = { @JoinColumn(name = "roleId") }, inverseJoinColumns = {
@@ -78,9 +73,21 @@ public class SysRole extends DataEntity implements Serializable {
 		this.permissions = permissions;
 	}
 
+	public String getIsCheck() {
+		return isCheck;
+	}
+
+	public void setIsCheck(String isCheck) {
+		this.isCheck = isCheck;
+	}
+
 	@Override
 	public String toString() {
 		return "SysRole [id=" + this.getId() + ", role=" + role + ", description=" + description + ", available=" + available
 				+ ", permissions=" + permissions + "]";
 	}
+
+
+
+
 }

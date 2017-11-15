@@ -11,6 +11,9 @@ public class ColumnDto {
 	private String table_desc ; // 表描述
 	
 	private String column_name ; // 列名称
+
+	private String column_name_table;//列名称 对应数据库
+
 	private String column_name_upperCaseFirstOne ; // 列名称，首字母大写
 	
 	private String column_type ; // 列类型
@@ -78,5 +81,12 @@ public class ColumnDto {
 		column_className = column_className.substring(column_className.lastIndexOf(".") + 1);
 		this.column_className = column_className;
 	}
-	
+
+	public String getColumn_name_table() {
+		return column_name_table;
+	}
+
+	public void setColumn_name_table(String column_name_table) {
+		this.column_name_table = column_name_table;
+	}
 }

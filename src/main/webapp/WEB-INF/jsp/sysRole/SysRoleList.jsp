@@ -47,16 +47,17 @@ request.setAttribute("contextPath", contextPath);
             <tbody>
             <c:forEach items="${list}" var="p">
                 <tr>
-                     <td><input type="checkbox"></td>
+                     <td><input type="checkbox" onclick="fenpei()"></td>
                      <td>${p.id}</td>
                      <td>${p.available}</td>
+
                      <td>${p.description}</td>
                      <td>${p.role}</td>
                      <td class="text-navy">
                             <button type="button" class="btn btn-primary"  onclick="window.location.href='/sysRole/detail?id=${p.id}'">查看</button>
                             <button type="button" class="btn btn-primary"  onclick="window.location.href='/sysRole/detail?id=${p.id}'">更新</button>
                             <button type="button" class="btn btn-primary"  onclick="window.location.href='/sysRole/delete?id=${p.id}'">删除</button>
-                            <button type="button" class="btn btn-primary"  onclick="fenpei()">分配</button>
+                            <button type="button" class="btn btn-primary"  onclick="fenpei(${p.id})">分配</button>
                       </td>
                 </tr>
             </c:forEach>
@@ -69,7 +70,7 @@ request.setAttribute("contextPath", contextPath);
 </body>
 <script type="text/javascript">
 
-    function fenpei() {
+    function fenpei(id) {
         //iframe层
         parent.layer.open({
             type: 2,
@@ -77,7 +78,11 @@ request.setAttribute("contextPath", contextPath);
             shadeClose: true,
             shade: false,
             area: ['1150px', '650px'],
-            content: '/sysRole/list' //iframe的url
+            content: '/sysRole/toSysPermission?id='+id //iframe的url
+            ,btn: ['关闭']
+            ,btn1: function(index, layero){
+                //按钮【按钮一】的回调
+            }
         });
     }
 </script>

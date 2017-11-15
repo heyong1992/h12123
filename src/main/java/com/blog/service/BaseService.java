@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,6 +16,13 @@ public class BaseService {
 
     @Autowired
     private EntityManager entityManager;
+
+    public static <T> List<T> copyIterator(Iterable<T> iter) {
+        List<T> copy = new ArrayList<T>();
+        while (iter.iterator().hasNext())
+            copy.add(iter.iterator().next());
+        return copy;
+    }
 
     /**
      * 查询的结果是实体的集合
@@ -66,5 +74,12 @@ public class BaseService {
         }*/
         return resultList;
 
+    }
+
+    public int executeUpdate(String sql){
+        System.out.println(sql);
+        Query query =  entityManager.createNativeQuery(sql);
+        int result = query.executeUpdate(); //影响的记录数
+        return result;
     }
 }

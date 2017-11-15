@@ -1,5 +1,6 @@
 package com.blog.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.Serializable;
@@ -16,6 +17,7 @@ public class ${className?cap_first} extends DataEntity implements Serializable{
 	private static final long serialVersionUID = 1L;
 	<#list columnList as pl>
 		//${pl.column_desc}
+    	@Column(name = "${pl.column_name_table}")
 		private ${pl.column_type} ${pl.column_name};
 	</#list>
 
