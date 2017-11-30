@@ -1,6 +1,9 @@
 package com.blog.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 import javax.persistence.*;
 
@@ -24,6 +27,8 @@ public class SysPermission extends DataEntity implements Serializable{
 
     @Transient
     private String isCheck;
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+    private Timestamp createDate;
 
 
 
@@ -91,6 +96,13 @@ public class SysPermission extends DataEntity implements Serializable{
         this.isCheck = isCheck;
     }
 
+    public Timestamp getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Timestamp createDate) {
+        this.createDate = createDate;
+    }
     //  public List<SysRole> getRoles() {
 //      return roles;
 //  }

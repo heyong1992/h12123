@@ -1,6 +1,9 @@
 package com.blog.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -39,6 +42,9 @@ public class UserInfo extends DataEntity implements Serializable {
     @JoinTable(name = "SysUserRole", joinColumns = { @JoinColumn(name = "id") }, inverseJoinColumns = {
             @JoinColumn(name = "roleId") })
     private List<SysRole> roleList;// 一个用户具有多个角色
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+    private Timestamp createDate;
 
 
     public String getUsername() {
@@ -87,6 +93,14 @@ public class UserInfo extends DataEntity implements Serializable {
 
     public void setRoleList(List<SysRole> roleList) {
         this.roleList = roleList;
+    }
+
+    public Timestamp getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Timestamp createDate) {
+        this.createDate = createDate;
     }
 
     /**

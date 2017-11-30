@@ -4,12 +4,12 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
       naming: org.hibernate.cfg.DefaultNamingStrategy
     database: mysql
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/hey
+    url: jdbc:mysql://127.0.0.1:3306/hey?characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull
     username: root
     password: root
   mvc:

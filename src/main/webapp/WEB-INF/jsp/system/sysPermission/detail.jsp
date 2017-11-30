@@ -13,6 +13,7 @@
         </div>
         <div class="ibox-content">
             <form action="/sysPermission/add" method="post" class="form-horizontal">
+                <input type="hidden" name="id" value="${sysPermission.id}">
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label">菜单名称</label>
@@ -26,7 +27,7 @@
                     <label class="col-sm-2 control-label">上级菜单</label>
 
                     <div class="col-sm-10">
-                        <formTags:select isHead="true" name="parentId" size="1" optionsList="${menuList}" class="form-control m-b"/>
+                        <formTags:select isHead="true" value="${sysPermission.parentId}" name="parentId" size="1" optionsList="${menuList}" class="form-control m-b"/>
                     </div>
                 </div>
                 <div class="hr-line-dashed"></div>

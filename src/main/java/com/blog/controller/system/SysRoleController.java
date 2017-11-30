@@ -54,7 +54,7 @@ public class SysRoleController{
 	@RequestMapping("/add")
 	public String add(SysRole sysRole){
 		sysRoleService.save(sysRole);
-		return "forward:/sysRole/list";
+		return "redirect:/sysRole/list";
 	}
 	/**
 	* 删除
@@ -63,7 +63,7 @@ public class SysRoleController{
 	@RequestMapping("/delete")
 	public String delete(Long id){
 		sysRoleService.delete(id);
-		return "forward:/sysRole/list";
+		return "redirect:/sysRole/list";
 	}
 
 

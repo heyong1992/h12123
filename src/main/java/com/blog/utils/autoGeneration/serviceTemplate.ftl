@@ -25,7 +25,12 @@ public class ${className?cap_first}Service extends BaseService{
             sql.append(" and s.${pl.column_name_table} =  '%%%s%%'");
             param.add(${className}.get${pl.column_name?cap_first}());
             }
-        <#elseif pl.column_type == "int">
+        <#elseif pl.column_type == "Date">
+            if(${className}.get${pl.column_name?cap_first}()!=null){
+            sql.append(" and s.${pl.column_name_table} =  '%%%s%%'");
+            param.add(${className}.get${pl.column_name?cap_first}());
+            }
+        <#elseif pl.column_type == "Integer">
             if(${className}.get${pl.column_name?cap_first}()!=null){
             sql.append(" and s.${pl.column_name_table} =  '%%%s%%'");
             param.add(${className}.get${pl.column_name?cap_first}());

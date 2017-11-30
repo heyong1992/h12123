@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -58,15 +61,25 @@ public class SysPermissionController {
     @RequestMapping("/add")
     public String add(SysPermission sysPermission){
         sysPermission=sysPermissionService.save(sysPermission);
-        return "forward:/sysPermission/list";
+        return "redirect:/sysPermission/list";
     }
     /**
      * 权限删除
      * @return
      */
     @RequestMapping("/delete")
+    @ResponseBody
     public String delete(Long id){
+
+
+        List<String> roleList=sysPermissionService.findRoleByPermissionid(id);
+        if(roleList.size()>0){
+            throw new RuntimeException();
+            //return "false";
+        }
+
         sysPermissionService.delete(id);
-        return "forward:/sysPermission/list";
+        return "true";
+        //return "redirect:/sysPermission/list";
     }
 }

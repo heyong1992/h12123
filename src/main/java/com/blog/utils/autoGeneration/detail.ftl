@@ -21,8 +21,9 @@
                     <label class="col-sm-2 control-label">${pl.column_desc}</label>
                     <div class="col-sm-10">
                         <#if pl.column_type == "Timestamp">
-                            ${pl.column_desc}<input class="form-control layer-date" name="${pl.column_name}"  value="${r"$"}{obj.${pl.column_name}}" placeholder="YYYY-MM-DD hh:mm:ss" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
-                        <#elseif pl.column_type == "int">
+                            <input class="form-control layer-date" name="${pl.column_name}"  value="${r"$"}{obj.${pl.column_name}}" placeholder="YYYY-MM-DD hh:mm:ss" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+                        <#elseif pl.column_type == "Date">
+                            <input class="form-control layer-date" name="${pl.column_name}"  value="${r"$"}{obj.${pl.column_name}}" placeholder="YYYY-MM-DD" onclick="laydate({istime: true, format: 'YYYY-MM-DD'})">
 
                         <#else>
                             <input class="form-control" type="text" name="${pl.column_name}" value="${r"$"}{obj.${pl.column_name}}">

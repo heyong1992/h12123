@@ -2,6 +2,7 @@ package com.blog.config.shiro.tag;
 
 import com.blog.utils.ObjectUtils;
 import org.apache.commons.collections.map.HashedMap;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
@@ -21,7 +22,6 @@ public class SelectTagHandler extends SimpleTagSupport implements DynamicAttribu
     private List optionsList;
     private String name;
     private String size;
-    private String isHead;
     private Map<String, Object> tagAttrs = new HashedMap();
 
     public void setName(String name) {
@@ -34,10 +34,6 @@ public class SelectTagHandler extends SimpleTagSupport implements DynamicAttribu
 
     public void setOptionsList(List optionsList) {
         this.optionsList = optionsList;
-    }
-
-    public void setHead(String head) {
-        this.isHead = head;
     }
 
     @Override
@@ -57,7 +53,13 @@ public class SelectTagHandler extends SimpleTagSupport implements DynamicAttribu
         }
         for (Object option : this.optionsList) {
             Map<String, Object> map=ObjectUtils.objectToMap(option);
-            String optionTag = String.format(OPTION_TEMPLATE,map.get("id"),map.get("name"));
+            String optionTag="";
+            if(tagAttrs.get("value")!=null&&tagAttrs.get("value").equals(map.get("id"))){
+                optionTag=String.format("<option selected value='%1$s'>%2$s</option>",map.get("id"),map.get("name"));
+            }else{
+                optionTag=String.format(OPTION_TEMPLATE,map.get("id"),map.get("name"));
+            }
+            //String optionTag = String.format(OPTION_TEMPLATE,map.get("id"),map.get("name"));
             out.println(optionTag);
         }
         out.println("</select>");

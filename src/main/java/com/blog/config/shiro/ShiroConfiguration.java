@@ -34,7 +34,7 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/userInfo/*", "anon");
         filterChainDefinitionMap.put("/**", "authc");
         filterChainDefinitionMap.put("/static/**", "anon");
-       // filterChainDefinitionMap.put("/favicon.ico", "anon");
+        filterChainDefinitionMap.put("/favicon.ico", "anon");
 
         // 如果不设置默认会自动寻找Web工程根目录下的"/login.jsp"页面
         shiroFilterFactoryBean.setLoginUrl("/login");

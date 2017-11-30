@@ -15,12 +15,7 @@ public class SysPermissionService extends BaseService {
 	@Autowired
 	private SysPermissionRepository sysPermissionRepository;
 
-	public static <T> List<T> copyIterator(Iterable<T> iter) {
-    	List<T> copy = new ArrayList<T>();
-        while (iter.iterator().hasNext())
-        copy.add(iter.iterator().next());
-        return copy;
-    }
+
     public List<SysPermission> findAll(SysPermission sysPermission){
             List<Object> param=new ArrayList<>();
             StringBuffer sql=new StringBuffer("select s.* from sys_permission s");
@@ -74,6 +69,12 @@ public class SysPermissionService extends BaseService {
     public void delete(Long id){
 		sysPermissionRepository.delete(id);
      }
+
+    public List<String> findRoleByPermissionid(Long permissionid){
+        String sql="select * from sys_role_permission s where s.permission_id=%s";
+        sql=String.format(sql,permissionid);
+        return this.find1(sql);
+    }
 
 
 }

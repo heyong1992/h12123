@@ -49,7 +49,7 @@ public class ${className?cap_first}Controller{
 	@RequestMapping("/add")
 	public String add(${className?cap_first} ${className}){
 		${className}Service.save(${className});
-		return "forward:/${className}/list";
+		return "redirect:/${className}/list";
 	}
 	/**
 	* 删除
@@ -58,7 +58,7 @@ public class ${className?cap_first}Controller{
 	@RequestMapping("/delete")
 	public String delete(Long id){
 		${className}Service.delete(id);
-		return "forward:/${className}/list";
+		return "redirect:/${className}/list";
 	}
 
 }

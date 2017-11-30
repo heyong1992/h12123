@@ -50,7 +50,7 @@
                 <td class="text-navy">
                     <button type="button" class="btn btn-w-m btn-info"  onclick="window.location.href='/sysPermission/detail?id=${m.id}'">查看</button>
                     <button type="button" class="btn btn-w-m btn-info"  onclick="window.location.href='/sysPermission/detail?id=${m.id}'">更新</button>
-                    <button type="button" class="btn btn-w-m btn-info"  onclick="window.location.href='/sysPermission/delete?id=${m.id}'">删除</button>
+                    <button type="button" class="btn btn-w-m btn-info"  onclick="del(${m.id})">删除</button>
                 </td>
             </tr>
             </c:forEach>
@@ -59,4 +59,28 @@
     </div>
 </div>
 </body>
+<script type="text/javascript">
+    function del(permissionId){
+        var url="/sysPermission/delete";
+        $.ajax({
+            url: url,
+            type: 'post',
+            data:{"id":permissionId},
+            dataType: 'text',
+            timeout: 1000,
+            success: function (data, status) {
+                if(data=="false"){
+                    alert("该权限已分配角色,无法删除");
+                }else{
+                    window.location.href="/sysPermission/list";
+                }
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(errorThrown+"==="+textStatus+"==="+jqXHR.responseText);
+                console.log(err)
+            }
+        })
+    }
+</script>
 </html>

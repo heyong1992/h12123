@@ -53,10 +53,13 @@ public class MyShiroRealm extends AuthorizingRealm {
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(userInfo, // 用户名
                 userInfo.getPassword(), // 密码  
                 ByteSource.Util.bytes(userInfo.getCredentialsSalt()), // salt=username+salt  
-                getName() // realm name  
+                getName() // realm name
+
         );
+
         return authenticationInfo;
     }
+
 
     /**
      * 授权查询回调函数, 进行鉴权但缓存中无用户的授权信息时调用
