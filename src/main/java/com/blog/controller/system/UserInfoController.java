@@ -44,7 +44,7 @@ public class UserInfoController {
      * @return
      */
     @RequestMapping("/detail")
-    public String detail(Long id,Model model){
+    public String detail(Integer id,Model model){
         if(id!=null){
             UserInfo userInfo=userInfoService.findOne(id);
             model.addAttribute("obj",userInfo);
@@ -69,7 +69,7 @@ public class UserInfoController {
      * @return
      */
     @RequestMapping("/delete")
-    public String delete(Long id){
+    public String delete(Integer id){
         userInfoService.delete(id);
         return "forward:/userInfo/list";
     }
@@ -99,7 +99,7 @@ public class UserInfoController {
      * @return
      */
     @RequestMapping("/toSysRole")
-    public String toSysRole(SysRole sysRole,Long userId, Model model){
+    public String toSysRole(SysRole sysRole,Integer userId, Model model){
         List<SysRole> roleList=sysRoleService.findAll(sysRole);
         //SysRole sysRole=sysRoleService.findOne(sysPermission.getId());
         List<String> havePermissionList=sysRoleService.findRByoleUserid(userId);
@@ -121,7 +121,7 @@ public class UserInfoController {
      * @return
      */
     @RequestMapping("/assignAuth")
-    public String assignAuth(Long roleId,Long userId){
+    public String assignAuth(Integer roleId,Integer userId){
         int resule=sysRoleService.assignAuth(roleId,userId,"sys_user_role");
         if(resule<1){
             return "false";
@@ -135,7 +135,7 @@ public class UserInfoController {
      * @return
      */
     @RequestMapping("/cancleAuth")
-    public String cancleAuth(Long roleId,Long userId){
+    public String cancleAuth(Integer roleId,Integer userId){
         int resule=sysRoleService.cancleAuthUser(roleId,userId);
         if(resule<1){
             return "false";

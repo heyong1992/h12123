@@ -62,15 +62,15 @@ public class SysPermissionService extends BaseService {
 		return sysPermissionRepository.save(sysPermission);
     }
 
-    public SysPermission findOne(Long id){
+    public SysPermission findOne(Integer id){
         return sysPermissionRepository.findOne(id);
     }
 
-    public void delete(Long id){
+    public void delete(Integer id){
 		sysPermissionRepository.delete(id);
      }
 
-    public List<String> findRoleByPermissionid(Long permissionid){
+    public List<String> findRoleByPermissionid(Integer permissionid){
         String sql="select * from sys_role_permission s where s.permission_id=%s";
         sql=String.format(sql,permissionid);
         return this.find1(sql);

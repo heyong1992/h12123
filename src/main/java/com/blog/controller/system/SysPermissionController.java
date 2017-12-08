@@ -4,6 +4,7 @@ import com.blog.domain.SysPermission;
 import com.blog.domain.SysRole;
 import com.blog.service.system.SysPermissionService;
 import com.blog.service.system.SysRoleService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,7 +43,7 @@ public class SysPermissionController {
      * @return
      */
     @RequestMapping("/detail")
-    public String detail(Long id,Model model){
+    public String detail(Integer id,Model model){
         List<SysPermission> permissionsList=sysPermissionService.findAll(new SysPermission());
         model.addAttribute("menuList",permissionsList);
         List<SysRole> roleList=sysRoleService.findAll(new SysRole());
@@ -60,6 +61,10 @@ public class SysPermissionController {
      */
     @RequestMapping("/add")
     public String add(SysPermission sysPermission){
+        if(sysPermission.getParentId()==null){
+            sysPermission.setParentId(0);
+
+        }
         sysPermission=sysPermissionService.save(sysPermission);
         return "redirect:/sysPermission/list";
     }
@@ -69,13 +74,12 @@ public class SysPermissionController {
      */
     @RequestMapping("/delete")
     @ResponseBody
-    public String delete(Long id){
+    public String delete(Integer id){
 
 
         List<String> roleList=sysPermissionService.findRoleByPermissionid(id);
         if(roleList.size()>0){
-            throw new RuntimeException();
-            //return "false";
+            return "false";
         }
 
         sysPermissionService.delete(id);

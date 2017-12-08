@@ -39,7 +39,7 @@ public class SysRoleController{
 	* @return
 	*/
 	@RequestMapping("/detail")
-	public String detail(Long id,Model model){
+	public String detail(Integer id,Model model){
 		if(id!=null){
 			SysRole sysRole=sysRoleService.findOne(id);
 			model.addAttribute("obj",sysRole);
@@ -61,7 +61,7 @@ public class SysRoleController{
 	* @return
 	*/
 	@RequestMapping("/delete")
-	public String delete(Long id){
+	public String delete(Integer id){
 		sysRoleService.delete(id);
 		return "redirect:/sysRole/list";
 	}
@@ -93,7 +93,7 @@ public class SysRoleController{
 	 * @return
 	 */
 	@RequestMapping("/assignAuth")
-	public String assignAuth(Long roleId,Long permissionId){
+	public String assignAuth(Integer roleId,Integer permissionId){
 		int resule=sysRoleService.assignAuth(roleId,permissionId,"sys_role_permission");
 		if(resule<1){
 			return "false";
@@ -107,7 +107,7 @@ public class SysRoleController{
 	 * @return
 	 */
 	@RequestMapping("/cancleAuth")
-	public String cancleAuth(Long roleId,Long permissionId){
+	public String cancleAuth(Integer roleId,Integer permissionId){
 		int resule=sysRoleService.cancleAuth(roleId,permissionId);
 		if(resule<1){
 			return "false";

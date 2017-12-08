@@ -37,4 +37,29 @@
 
         <dynamic-attributes>true</dynamic-attributes>
     </tag>
+
+    <tag>
+        <name>selectValue</name>
+        <tag-class>com.blog.config.shiro.tag.SelectTagHandler</tag-class>
+        <body-content>empty</body-content>
+
+        <attribute>
+            <name>optionsList</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.util.List</type>
+        </attribute>
+
+        <attribute>
+            <name>name</name>
+            <required>true</required>
+        </attribute>
+
+        <attribute>
+            <name>size</name>
+            <required>true</required>
+        </attribute>
+
+        <dynamic-attributes>true</dynamic-attributes>
+    </tag>
 </taglib>

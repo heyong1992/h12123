@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
  *
  */
 @Repository
-public interface UserInfoRepository extends CrudRepository<UserInfo, Long> {
+public interface UserInfoRepository extends CrudRepository<UserInfo, Integer> {
     /** 通过username查找用户信息 **/
     public UserInfo findByUsername(String username);
 

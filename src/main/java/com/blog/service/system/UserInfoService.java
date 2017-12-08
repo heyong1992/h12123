@@ -67,11 +67,11 @@ public class UserInfoService extends BaseService{
         userInfoRepository.save(userInfo);
     }
 
-    public UserInfo findOne(Long id){
+    public UserInfo findOne(Integer id){
         return userInfoRepository.findOne(id);
     }
 
-    public void delete(Long id){
+    public void delete(Integer id){
         userInfoRepository.delete(id);
     }
 

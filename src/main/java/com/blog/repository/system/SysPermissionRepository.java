@@ -14,7 +14,7 @@ import java.util.List;
  *
  */
 @Repository
-public interface SysPermissionRepository extends JpaRepository<SysPermission, Long> {
+public interface SysPermissionRepository extends JpaRepository<SysPermission, Integer> {
 
     @Query(value="select  t.* from sys_permission t",nativeQuery = true)
     List<SysPermission> queryall();

@@ -20,7 +20,7 @@ public class AutoGenerationDemo {
         //驱动
         String driver = "com.mysql.jdbc.Driver";
         //表名
-        String tableName = "api_token";
+        String tableName = "sys_dict";
         //模板路径
         //String templateDir = "E:\\heywork\\heyBlog\\src\\main\\java\\com\\blog\\utils\\autoGeneration";
         String templateDir =System.getProperty("user.dir")+"/src/main/java/com/blog/utils/autoGeneration";

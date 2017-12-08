@@ -21,7 +21,7 @@ public class SysPermission extends DataEntity implements Serializable{
     private String resourceType;// 资源类型，[menu|button]
     private String url;// 资源路径.
     private String permission; // 权限字符串,menu例子：role:*，button例子：role:create,role:update,role:delete,role:view
-    private Long parentId; // 父编号
+    private Integer parentId; // 父编号
     private String parentIds; // 父编号列表
     private Boolean available = Boolean.FALSE;
 
@@ -29,6 +29,7 @@ public class SysPermission extends DataEntity implements Serializable{
     private String isCheck;
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Timestamp createDate;
+
 
 
 
@@ -64,11 +65,11 @@ public class SysPermission extends DataEntity implements Serializable{
         this.permission = permission;
     }
 
-    public Long getParentId() {
+    public Integer getParentId() {
         return parentId;
     }
 
-    public void setParentId(Long parentId) {
+    public void setParentId(Integer parentId) {
         this.parentId = parentId;
     }
 
@@ -110,6 +111,7 @@ public class SysPermission extends DataEntity implements Serializable{
 //  public void setRoles(List<SysRole> roles) {
 //      this.roles = roles;
 //  }
+
 
     @Override
     public String toString() {

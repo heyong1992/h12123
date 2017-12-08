@@ -31,11 +31,11 @@ public class TagService {
         menuRepository.save(permission);
     }
 
-    public SysPermission findOne(Long id){
+    public SysPermission findOne(Integer id){
         return menuRepository.findOne(id);
     }
 
-    public void delete(Long id){
+    public void delete(Integer id){
         menuRepository.delete(id);
     }
 

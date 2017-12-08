@@ -95,7 +95,7 @@ public class MyShiroRealm extends AuthorizingRealm {
 
         private static final long serialVersionUID = 1L;
 
-        private Long id;
+        private Integer id;
         private String loginName;
         private String name;
         private Map<String, Object> cacheMap;
@@ -106,7 +106,7 @@ public class MyShiroRealm extends AuthorizingRealm {
             this.name = user.getName();
         }
 
-        public Long getId() {
+        public Integer getId() {
             return id;
         }
 

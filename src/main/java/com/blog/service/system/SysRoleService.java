@@ -46,39 +46,39 @@ public class SysRoleService extends BaseService {
 		sysRoleRepository.save(sysRole);
     }
 
-    public SysRole findOne(Long id){
+    public SysRole findOne(Integer id){
         return sysRoleRepository.findOne(id);
     }
 
-    public void delete(Long id){
+    public void delete(Integer id){
 		sysRoleRepository.delete(id);
      }
 
-    public List<String> findPermissionByRoleid(Long roleid){
+    public List<String> findPermissionByRoleid(Integer roleid){
         String sql="select s.permission_id from sys_role_permission s where s.role_id="+roleid;
         return this.find1(sql);
     }
 
-    public List<String> findRByoleUserid(Long userid){
+    public List<String> findRByoleUserid(Integer userid){
         String sql="select s.role_id from sys_user_role s where s.id="+userid;
         return this.find1(sql);
     }
 
     @Transactional
-    public int assignAuth(Long id1,Long id2,String tableName){
+    public int assignAuth(Integer id1,Integer id2,String tableName){
         String sql="insert into %s values(%s,%s)";
         int result=executeUpdate(String.format(sql,tableName,id1,id2));
         return result;
     }
     @Transactional
-    public int cancleAuth(Long roleId,Long permissionId){
+    public int cancleAuth(Integer roleId,Integer permissionId){
         String sql="delete from sys_role_permission  where role_id=%s and permission_id=%s";
         int result=executeUpdate(String.format(sql,roleId,permissionId));
         return result;
     }
 
     @Transactional
-    public int cancleAuthUser(Long roleId,Long userId){
+    public int cancleAuthUser(Integer roleId,Integer userId){
         String sql="delete from sys_user_role  where role_id=%s and id=%s";
         int result=executeUpdate(String.format(sql,roleId,userId));
         return result;
