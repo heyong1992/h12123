@@ -19,7 +19,6 @@ public class DataEntity {
     @GeneratedValue
     private Integer id;
 
-
     public Integer getId() {
         return id;
     }

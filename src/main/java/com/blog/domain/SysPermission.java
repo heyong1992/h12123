@@ -30,9 +30,6 @@ public class SysPermission extends DataEntity implements Serializable{
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Timestamp createDate;
 
-
-
-
     public String getName() {
         return name;
     }
