@@ -29,7 +29,7 @@ public class UserInfoService extends BaseService{
         StringBuffer sql=new StringBuffer("select s.* from user_info s");
         sql.append(" where 1=1 ");
         if(userInfo.getCreateDate()!=null){
-            sql.append(" and s.createDate =  '%s'");
+            sql.append(" and s.createDate =  '%%%s%%'");
             param.add(userInfo.getCreateDate());
         }
 

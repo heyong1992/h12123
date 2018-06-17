@@ -58895,8 +58895,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return cssText.join(';') + ';';
 	    }
 
-
-		/**
+	    /**
 	     * @alias module:echarts/component/tooltip/TooltipContent
 	     * @constructor
 	     */

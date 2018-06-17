@@ -19,9 +19,6 @@ public class DataEntity {
     @GeneratedValue
     private Long id;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-    private Timestamp createDate;
-
     public Long getId() {
         return id;
     }
@@ -30,11 +27,4 @@ public class DataEntity {
         this.id = id;
     }
 
-    public Timestamp getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Timestamp createDate) {
-        this.createDate = createDate;
-    }
 }
