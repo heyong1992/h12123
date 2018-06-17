@@ -69,7 +69,6 @@ request.setAttribute("contextPath", contextPath);
 </div>
 </body>
 <script type="text/javascript">
-
     function fenpei(id) {
         //iframe层
         parent.layer.open({
