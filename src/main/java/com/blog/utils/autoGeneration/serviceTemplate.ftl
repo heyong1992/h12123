@@ -50,11 +50,11 @@ public class ${className?cap_first}Service extends BaseService{
 		${className}Repository.save(${className});
     }
 
-    public ${className?cap_first} findOne(Long id){
+    public ${className?cap_first} findOne(Integer id){
         return ${className}Repository.findOne(id);
     }
 
-    public void delete(Long id){
+    public void delete(Integer id){
 		${className}Repository.delete(id);
      }
 

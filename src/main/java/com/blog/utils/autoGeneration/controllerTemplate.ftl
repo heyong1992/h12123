@@ -34,7 +34,7 @@ public class ${className?cap_first}Controller{
 	* @return
 	*/
 	@RequestMapping("/detail")
-	public String detail(Long id,Model model){
+	public String detail(Integer id,Model model){
 		if(id!=null){
 			${className?cap_first} ${className}=${className}Service.findOne(id);
 			model.addAttribute("obj",${className});
@@ -56,7 +56,7 @@ public class ${className?cap_first}Controller{
 	* @return
 	*/
 	@RequestMapping("/delete")
-	public String delete(Long id){
+	public String delete(Integer id){
 		${className}Service.delete(id);
 		return "redirect:/${className}/list";
 	}

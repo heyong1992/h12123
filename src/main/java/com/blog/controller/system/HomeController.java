@@ -4,6 +4,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.blog.domain.SysPermission;
+import com.blog.domain.SysRole;
 import com.blog.domain.UserInfo;
 import org.apache.catalina.User;
 import org.apache.shiro.SecurityUtils;
@@ -20,6 +22,11 @@ public class HomeController {
     public String index(Model model) {
         UserInfo userInfo=(UserInfo) SecurityUtils.getSubject().getPrincipal();
         model.addAttribute("userInfo",userInfo);
+        /*for (SysRole role:userInfo.getRoleList()) {
+            for(SysPermission syspermii){
+
+            }
+        }*/
         return "/index";
     }
 
