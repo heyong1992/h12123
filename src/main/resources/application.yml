@@ -9,9 +9,9 @@ spring:
     database: mysql
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/hey?characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull
-    username: root
-    password: root
+    url: jdbc:mysql://rm-uf6f34quzk4k87955o.mysql.rds.aliyuncs.com/heyong?characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull
+    username: heyong
+    password: heyong
   mvc:
       view:
         prefix: /WEB-INF/jsp/

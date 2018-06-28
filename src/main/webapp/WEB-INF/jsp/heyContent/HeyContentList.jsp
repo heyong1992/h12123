@@ -46,7 +46,6 @@ request.setAttribute("contextPath", contextPath);
                 <th>类型id</th>
                 <th>创建时间</th>
                 <th>发布人</th>
-                <th></th>
                 <th>文章标签</th>
                 <th>操作</th>
             </tr>
@@ -60,7 +59,8 @@ request.setAttribute("contextPath", contextPath);
                      <td>${p.dictId}</td>
                      <td>${p.createDate}</td>
                      <td>${p.userId}</td>
-                     <td>${p.content}</td>
+
+                     <%--<td>${fn:substring(p.content, 0, 16)}</td>--%>
                      <td>${p.tag}</td>
                      <td class="text-navy">
                             <button type="button" class="btn btn-primary"  onclick="window.location.href='/heyContent/detail?id=${p.id}'">查看</button>

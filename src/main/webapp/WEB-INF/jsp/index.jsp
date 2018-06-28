@@ -126,19 +126,7 @@
                                 </div>
                             </li>
                             <li class="divider"></li>
-                            <li>
-                                <div class="dropdown-messages-box">
-                                    <a href="profile.html" class="pull-left">
-                                        <img alt="image" class="img-circle" src="img/a4.jpg">
-                                    </a>
-                                    <div class="media-body ">
-                                        <small class="pull-right text-navy">25小时前</small>
-                                        <strong>国民岳父</strong> 如何看待“男子不满自己爱犬被称为狗，刺伤路人”？——这人比犬还凶
-                                        <br>
-                                        <small class="text-muted">昨天</small>
-                                    </div>
-                                </div>
-                            </li>
+
                             <li class="divider"></li>
                             <li>
                                 <div class="text-center link-block">
@@ -192,7 +180,7 @@
             <a href="/logout" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
         </div>
         <div class="row J_mainContent" id="content-main">
-            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="login" frameborder="0" data-id="index_v1.html" seamless></iframe>
+            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="heyContent/show?id=100" frameborder="0" data-id="index_v1.html" seamless></iframe>
         </div>
         <div class="footer">
             <div class="pull-right">&copy; 2014-2015 <a href="http://www.zi-han.net/" target="_blank">zihan's blog</a>
@@ -320,104 +308,9 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="sidebar-message">
-                            <a href="#">
-                                <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="img/a2.jpg">
-                                </div>
-                                <div class="media-body">
-                                    HCY48之音乐大魔王会员专属皮肤已上线，快来一键换装拥有他，宣告你对华晨宇的爱吧！
-                                    <br>
-                                    <small class="text-muted">昨天 2:45</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="sidebar-message">
-                            <a href="#">
-                                <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="img/a3.jpg">
 
-                                    <div class="m-t-xs">
-                                        <i class="fa fa-star text-warning"></i>
-                                        <i class="fa fa-star text-warning"></i>
-                                        <i class="fa fa-star text-warning"></i>
-                                    </div>
-                                </div>
-                                <div class="media-body">
-                                    写的好！与您分享
-                                    <br>
-                                    <small class="text-muted">昨天 1:10</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="sidebar-message">
-                            <a href="#">
-                                <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="img/a4.jpg">
-                                </div>
 
-                                <div class="media-body">
-                                    国外极限小子的炼成！这还是亲生的吗！！
-                                    <br>
-                                    <small class="text-muted">昨天 8:37</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="sidebar-message">
-                            <a href="#">
-                                <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="img/a8.jpg">
-                                </div>
-                                <div class="media-body">
 
-                                    一只流浪狗被收留后，为了减轻主人的负担，坚持自己觅食，甚至......有些东西，可能她比我们更懂。
-                                    <br>
-                                    <small class="text-muted">今天 4:21</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="sidebar-message">
-                            <a href="#">
-                                <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="img/a7.jpg">
-                                </div>
-                                <div class="media-body">
-                                    这哥们的新视频又来了，创意杠杠滴，帅炸了！
-                                    <br>
-                                    <small class="text-muted">昨天 2:45</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="sidebar-message">
-                            <a href="#">
-                                <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="img/a3.jpg">
-
-                                    <div class="m-t-xs">
-                                        <i class="fa fa-star text-warning"></i>
-                                        <i class="fa fa-star text-warning"></i>
-                                        <i class="fa fa-star text-warning"></i>
-                                    </div>
-                                </div>
-                                <div class="media-body">
-                                    最近在补追此剧，特别喜欢这段表白。
-                                    <br>
-                                    <small class="text-muted">昨天 1:10</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="sidebar-message">
-                            <a href="#">
-                                <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="img/a4.jpg">
-                                </div>
-                                <div class="media-body">
-                                    我发起了一个投票 【你认为下午大盘会翻红吗？】
-                                    <br>
-                                    <small class="text-muted">星期一 8:37</small>
-                                </div>
-                            </a>
-                        </div>
                     </div>
 
                 </div>
@@ -429,73 +322,7 @@
                     </div>
 
                     <ul class="sidebar-list">
-                        <li>
-                            <a href="#">
-                                <div class="small pull-right m-t-xs">9小时以后</div>
-                                <h4>市场调研</h4> 按要求接收教材；
 
-                                <div class="small">已完成： 22%</div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
-                                </div>
-                                <div class="small text-muted m-t-xs">项目截止： 4:00 - 2015.10.01</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="small pull-right m-t-xs">9小时以后</div>
-                                <h4>可行性报告研究报上级批准 </h4> 编写目的编写本项目进度报告的目的在于更好的控制软件开发的时间,对团队成员的 开发进度作出一个合理的比对
-
-                                <div class="small">已完成： 48%</div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 48%;" class="progress-bar"></div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="small pull-right m-t-xs">9小时以后</div>
-                                <h4>立项阶段</h4> 东风商用车公司 采购综合综合查询分析系统项目进度阶段性报告武汉斯迪克科技有限公司
-
-                                <div class="small">已完成： 14%</div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="label label-primary pull-right">NEW</span>
-                                <h4>设计阶段</h4>
-                                <!--<div class="small pull-right m-t-xs">9小时以后</div>-->
-                                项目进度报告(Project Progress Report)
-                                <div class="small">已完成： 22%</div>
-                                <div class="small text-muted m-t-xs">项目截止： 4:00 - 2015.10.01</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="small pull-right m-t-xs">9小时以后</div>
-                                <h4>拆迁阶段</h4> 科研项目研究进展报告 项目编号: 项目名称: 项目负责人:
-
-                                <div class="small">已完成： 22%</div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
-                                </div>
-                                <div class="small text-muted m-t-xs">项目截止： 4:00 - 2015.10.01</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="small pull-right m-t-xs">9小时以后</div>
-                                <h4>建设阶段 </h4> 编写目的编写本项目进度报告的目的在于更好的控制软件开发的时间,对团队成员的 开发进度作出一个合理的比对
-
-                                <div class="small">已完成： 48%</div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 48%;" class="progress-bar"></div>
-                                </div>
-                            </a>
-                        </li>
                         <li>
                             <a href="#">
                                 <div class="small pull-right m-t-xs">9小时以后</div>
@@ -538,39 +365,7 @@
                 </div>
 
             </div>
-            <div class="right">
-                <div class="author-name">
-                    游客
-                    <small class="chat-date">
-                        11:24
-                    </small>
-                </div>
-                <div class="chat-message">
-                    你好，请问H+有帮助文档吗？
-                </div>
-            </div>
-            <div class="left">
-                <div class="author-name">
-                    Beau-zihan
-                    <small class="chat-date">
-                        08:45
-                    </small>
-                </div>
-                <div class="chat-message active">
-                    有，购买的H+源码包中有帮助文档，位于docs文件夹下
-                </div>
-            </div>
-            <div class="right">
-                <div class="author-name">
-                    游客
-                    <small class="chat-date">
-                        11:24
-                    </small>
-                </div>
-                <div class="chat-message">
-                    那除了帮助文档还提供什么样的服务？
-                </div>
-            </div>
+
             <div class="left">
                 <div class="author-name">
                     Beau-zihan

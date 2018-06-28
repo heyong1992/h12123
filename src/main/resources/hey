@@ -13,3 +13,4 @@
 
 11.20 进区  3灵1敏金 3灵1敏火 3体1敏木 3体1敏木 法水
 指引到20级
+url: jdbc:mysql://127.0.0.1:3306/hey?characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull

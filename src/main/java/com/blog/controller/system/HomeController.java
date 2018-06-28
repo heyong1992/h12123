@@ -35,6 +35,11 @@ public class HomeController {
         return "/login";
     }
 
+    @RequestMapping(value = "/notice", method = RequestMethod.GET)
+    public String notice() {
+        return "/notice";
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(HttpServletRequest request, Map<String, Object> map) {
         System.out.println("HomeController.login");

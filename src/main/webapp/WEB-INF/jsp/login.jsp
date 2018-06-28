@@ -30,12 +30,12 @@
 <body bgcolor="#f0f8ff">
 <div>
     <form action="/login" method="post">
-        <h3>问道搬砖辅助平台</h3>
-        账号：<input type="text" name="username" value="hey"/></p>
-        密码：<input type="text" name="password" value="123456"/></p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" class="button" value="登录"/>&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="button" class="button" onclick="window.location.href='/userInfo/detail'" value="注册"/>
-        ${msg}---
+        <h3>东汉搬砖交流平台</h3>
+        账号：<input type="text" name="username" value="test"/></p>
+        密码：<input type="password" name="password" value="123456"/></p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" class="button" value="  登  录  "/>&nbsp;&nbsp;&nbsp;&nbsp;
+    <%--<input type="button" class="button" onclick="window.location.href='/userInfo/detail'" value="注册"/>--%>
+        ${msg}
 
 
     </form>
